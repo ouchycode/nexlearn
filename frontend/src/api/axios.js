@@ -2,7 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
   // Jika sudah dideploy, ganti localhost ini dengan URL Vercel Backend kamu
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://nexlearn-api.vercel.app/api",
 });
 
 // Otomatis masukkan token jika ada di localStorage
