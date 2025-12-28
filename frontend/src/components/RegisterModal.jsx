@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../api/axios"; // <--- GANTI INI (Pakai instance API kita)
 import Swal from "sweetalert2";
 // Icons
 import { X, User, Mail, Lock, UserPlus } from "lucide-react";
@@ -18,7 +18,9 @@ const RegisterModal = ({ isOpen, onClose, onSwitchToLogin }) => {
     setLoading(true);
 
     try {
-      await axios.post("/auth/register", form);
+      // GUNAKAN API.post AGAR BASE URL OTOMATIS TER-HANDLE
+      // Backend route: /api/auth/register
+      await API.post("/auth/register", form);
 
       // Tutup modal dulu
       onClose();
