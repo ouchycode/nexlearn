@@ -16,12 +16,7 @@ const app = express();
 // Penting: Izinkan akses dari Frontend Vercel Anda dan Localhost
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173", // Vite Local
-      "http://localhost:3000", // React Create App Local
-      "https://nexlearn.vercel.app", // URL Project Vercel Anda (sesuaikan jika beda)
-      "*", // Sementara izinkan semua agar tidak error saat testing awal
-    ],
+    origin: ["http://localhost:5173", "https://nexlearn-mauve.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
