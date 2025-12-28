@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* 1. TEMA LIGHT (DEFAULT) - Clean & Professional */
+  :root {
+    --bg-main: #ffffff;
+    --bg-card: #f9fafb; /* Gray-50 */
+    --text-main: #111827; /* Gray-900 */
+    --text-muted: #6b7280; /* Gray-500 */
+    --primary: #7c3aed; /* Violet-600 */
+    --primary-hover: #6d28d9;
+    --border: #e5e7eb; /* Gray-200 */
+    --accent-glow: rgba(124, 58, 237, 0.1);
+  }
+
+  /* 2. TEMA DARK - Future Tech / SaaS */
+  [data-theme="dark"] {
+    --bg-main: #050505; /* Almost Black */
+    --bg-card: #0f0f0f; /* Dark Gray Card */
+    --text-main: #f9fafb; /* Gray-50 */
+    --text-muted: #9ca3af; /* Gray-400 */
+    --primary: #6366f1; /* Indigo-500 */
+    --primary-hover: #4f46e5;
+    --border: #1f2937; /* Gray-800 */
+    --accent-glow: rgba(99, 102, 241, 0.15);
+  }
+
+  /* 3. TEMA VALENTINE - Gen Z Pink / Soft */
+  [data-theme="valentine"] {
+    --bg-main: #fff0f5; /* Lavender Blush */
+    --bg-card: #ffffff; /* White Card */
+    --text-main: #831843; /* Pink-900 */
+    --text-muted: #be185d; /* Pink-700 */
+    --primary: #ec4899; /* Pink-500 */
+    --primary-hover: #db2777;
+    --border: #fbcfe8; /* Pink-200 */
+    --accent-glow: rgba(236, 72, 153, 0.2);
+  }
+
+  body {
+    @apply bg-bg-main text-text-main transition-colors duration-500 font-sans;
+  }
+}
+
+/* Animasi Blob Custom */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+.animate-blob {
+  animation: blob 7s infinite;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
